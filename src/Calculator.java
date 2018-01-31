@@ -1,5 +1,4 @@
-public class Main {
-
+public class Calculator {
     public static void main(String[] args) {
         Register A = new Register(8);
         Register B = new Register(8);
@@ -22,16 +21,14 @@ public class Main {
         // adding the twos complement is how we subtract
         Register C = TwosComplementer.twosComplement(B);
         R = Adder.add(A, C);
-        System.out.printf(""
-                + " %s (%3d)%n", R, R.toDecimalNumber());
+        System.out.printf("" + " %s (%3d)%n", R, R.toDecimalNumber());
         System.out.printf("%n");
         System.out.printf("But we don't so we add the twos complement and here is what that would look like%n");
         System.out.printf(" %s (%3d)%n", A, A.toDecimalNumber());
         System.out.printf("+%s (%3d)%n", C, C.toDecimalNumber());
         System.out.printf("---------------------------------%n");
         // adding the twos complement is how we subtract
-        System.out.printf(""
-                + " %s (%3d)%n", R, R.toDecimalNumber());
+        System.out.printf("" + " %s (%3d)%n", R, R.toDecimalNumber());
     }
 }
 
