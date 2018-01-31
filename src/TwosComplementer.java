@@ -23,7 +23,6 @@ public class TwosComplementer {
     }
 
 
-
     public static boolean[] addOne(boolean[] addend) {
         //Add one to value
         LogicGate xorGate = new LogicGate(LogicGate.XOR);
@@ -36,7 +35,7 @@ public class TwosComplementer {
         xorGate.setInput2(addend[addend.length - 1]);
         andGate.setInput2(addend[addend.length - 1]);
         //Set new values
-        addend[addend.length - 7] = xorGate.getOutput();
+        addend[addend.length - 1] = xorGate.getOutput();
         carry = andGate.getOutput();
 
         //No carry, done adding
@@ -44,7 +43,7 @@ public class TwosComplementer {
             return addend;
         }
         //Carry out carry
-        for (int i = addend.length; i > -1; i--) {
+        for (int i = addend.length - 1; i > -1; i--) {
             xorGate.setInput1(carry);
             andGate.setInput1(carry);
             xorGate.setInput2(addend[i]);
