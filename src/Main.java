@@ -1,6 +1,37 @@
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        Register A = new Register(8);
+        Register B = new Register(8);
+        A.clockIt();
+        A.setDatalines("00110010");
+        A.clockIt();
+        B.clockIt();
+        B.setDatalines("00001101");
+        B.clockIt();
+        System.out.printf(" %s (%3d)%n", A, A.toDecimalNumber());
+        System.out.printf("+%s (%3d)%n", B, B.toDecimalNumber());
+        System.out.printf("---------------------------------%n");
+        Register R = Adder.add(A, B);
+        System.out.printf(" %s (%3d)%n", R, R.toDecimalNumber());
+        System.out.printf("%n");
+        System.out.printf("If we had hardware to subtract, here is what it would look like%n");
+        System.out.printf(" %s (%3d)%n", A, A.toDecimalNumber());
+        System.out.printf("-%s (%3d)%n", B, B.toDecimalNumber());
+        System.out.printf("---------------------------------%n");
+        // adding the twos complement is how we subtract
+        Register C = TwosComplementer.twosComplement(B);
+        R = Adder.add(A, C);
+        System.out.printf(""
+                + " %s (%3d)%n", R, R.toDecimalNumber());
+        System.out.printf("%n");
+        System.out.printf("But we don't so we add the twos complement and here is what that would look like%n");
+        System.out.printf(" %s (%3d)%n", A, A.toDecimalNumber());
+        System.out.printf("+%s (%3d)%n", C, C.toDecimalNumber());
+        System.out.printf("---------------------------------%n");
+        // adding the twos complement is how we subtract
+        System.out.printf(""
+                + " %s (%3d)%n", R, R.toDecimalNumber());
     }
 }
+
