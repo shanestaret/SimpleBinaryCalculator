@@ -22,26 +22,38 @@ public class TwosComplementer {
 
     }
 
-    private static boolean[] addOne(boolean[] addend) {
+
+
+    public static boolean[] addOne(boolean[] addend) {
         //Add one to value
         LogicGate xorGate = new LogicGate(LogicGate.XOR);
         LogicGate andGate = new LogicGate(LogicGate.AND);
-        for (int i = 0; i < addend.length; i++) {
-            //Our "1" to add
-            boolean a = true;
-            xorGate.setInput1(a);
-            andGate.setInput1(a);
+        boolean carry = false;
+        //Add 1
+        boolean a = true;
+        xorGate.setInput1(a);
+        andGate.setInput1(a);
+        xorGate.setInput2(addend[addend.length - 1]);
+        andGate.setInput2(addend[addend.length - 1]);
+        //Set new values
+        addend[addend.length - 7] = xorGate.getOutput();
+        carry = andGate.getOutput();
+
+        //No carry, done adding
+        if (carry == false) {
+            return addend;
+        }
+        //Carry out carry
+        for (int i = addend.length; i > -1; i--) {
+            xorGate.setInput1(carry);
+            andGate.setInput1(carry);
             xorGate.setInput2(addend[i]);
             andGate.setInput2(addend[i]);
-
             //Set new values
             addend[i] = xorGate.getOutput();
+            carry = andGate.getOutput();
 
         }
-
-        return new boolean[0];
-
+        return addend;
     }
-
-
 }
