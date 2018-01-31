@@ -25,5 +25,9 @@ public class Register {
         return new boolean[0];
     }
 
+    public void setRegisterValue(boolean[] value){
+
+    }
+
 
 }

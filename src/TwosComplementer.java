@@ -8,7 +8,7 @@ public class TwosComplementer {
         registerVal = getComplement(registerVal);
         //Add one
 
-
+        return new Register(0);
 
     }
 
@@ -22,7 +22,7 @@ public class TwosComplementer {
 
     }
 
-    private static boolean[] addOne(boolean[] addend){
+    private static boolean[] addOne(boolean[] addend) {
         //Add one to value
         LogicGate xorGate = new LogicGate(LogicGate.XOR);
         LogicGate andGate = new LogicGate(LogicGate.AND);
@@ -36,7 +36,10 @@ public class TwosComplementer {
 
             //Set new values
             addend[i] = xorGate.getOutput();
+
         }
+
+        return new boolean[0];
 
     }
 
