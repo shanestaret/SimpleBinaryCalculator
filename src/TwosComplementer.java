@@ -26,7 +26,6 @@ public class TwosComplementer {
         //Add one to value
         LogicGate xorGate = new LogicGate(LogicGate.XOR);
         LogicGate andGate = new LogicGate(LogicGate.AND);
-        boolean carry = false;
         for (int i = 0; i < addend.length; i++) {
             //Our "1" to add
             boolean a = true;
