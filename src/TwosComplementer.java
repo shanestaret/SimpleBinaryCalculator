@@ -42,8 +42,10 @@ public class TwosComplementer {
         if (carry == false) {
             return addend;
         }
-        //Carry out carry
-        for (int i = addend.length - 1; i > -1; i--) {
+        
+        //Proccess carry
+        //Must length - 2 because we already modified the last bit in the array(least significant)
+        for (int i = addend.length - 2; i > -1; i--) {
             xorGate.setInput1(carry);
             andGate.setInput1(carry);
             xorGate.setInput2(addend[i]);

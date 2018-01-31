@@ -30,7 +30,7 @@ public class Calculator {
         // adding the twos complement is how we subtract
         System.out.printf("" + " %s (%3d)%n", R, R.toDecimalNumber());*/
 
-        boolean[] register = {false, true, true, true};
+        boolean[] register = {true, true};
 
         TwosComplementer complementer = new TwosComplementer();
         register = complementer.addOne(register);
