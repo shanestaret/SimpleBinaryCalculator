@@ -1,9 +1,9 @@
 public class Complementor {
 
-    public boolean[] getComplement(int[] original){
+   /* public boolean[] getComplement(int[] original){
         
 
-    }
+    }*/
 
 
 }
