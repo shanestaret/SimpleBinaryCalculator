@@ -2,7 +2,7 @@ public class Register {
     //Use the code blocks to write your software
 
 
-    public Register(int val) {
+    public Register(int size) {
 
     }
 
@@ -18,6 +18,11 @@ public class Register {
 
 
         return 0;
+    }
+
+    //Used to access the register value
+    public boolean[] getRegisterValue() {
+        return new boolean[0];
     }
 
 
