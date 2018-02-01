@@ -42,7 +42,7 @@ public class TwosComplementer {
         if (carry == false) {
             return addend;
         }
-        
+
         //Proccess carry
         //Must length - 2 because we already modified the last bit in the array(least significant)
         for (int i = addend.length - 2; i > -1; i--) {
