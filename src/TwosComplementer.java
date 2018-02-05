@@ -7,8 +7,12 @@ public class TwosComplementer {
         //Get complement
         registerVal = getComplement(registerVal);
         //Add one
-
-        return new Register(0);
+        addOne(registerVal);
+        //Create new register and return
+        //@// TODO: 2/5/2018 update this to support N sized registers
+        Register tempRegister = new Register(8);
+        tempRegister.setRegisterValue(registerVal);
+        return tempRegister;
 
     }
 
@@ -22,26 +26,39 @@ public class TwosComplementer {
 
     }
 
-    private static boolean[] addOne(boolean[] addend) {
+
+    public static boolean[] addOne(boolean[] addend) {
         //Add one to value
         LogicGate xorGate = new LogicGate(LogicGate.XOR);
         LogicGate andGate = new LogicGate(LogicGate.AND);
-        for (int i = 0; i < addend.length; i++) {
-            //Our "1" to add
-            boolean a = true;
-            xorGate.setInput1(a);
-            andGate.setInput1(a);
-            xorGate.setInput2(addend[i]);
-            andGate.setInput2(addend[i]);
+        boolean carry = false;
+        //Add 1
+        boolean a = true;
+        xorGate.setInput1(a);
+        andGate.setInput1(a);
+        xorGate.setInput2(addend[addend.length - 1]);
+        andGate.setInput2(addend[addend.length - 1]);
+        //Set new values
+        addend[addend.length - 1] = xorGate.getOutput();
+        carry = andGate.getOutput();
 
-            //Set new values
-            addend[i] = xorGate.getOutput();
-
+        //No carry, done adding
+        if (carry == false) {
+            return addend;
         }
 
-        return new boolean[0];
+        //Proccess carry
+        //Must length - 2 because we already modified the last bit in the array(least significant)
+        for (int i = addend.length - 2; i > -1; i--) {
+            xorGate.setInput1(carry);
+            andGate.setInput1(carry);
+            xorGate.setInput2(addend[i]);
+            andGate.setInput2(addend[i]);
+            //Set new values
+            addend[i] = xorGate.getOutput();
+            carry = andGate.getOutput();
 
+        }
+        return addend;
     }
-
-
 }

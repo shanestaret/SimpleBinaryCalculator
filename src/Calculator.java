@@ -1,6 +1,6 @@
 public class Calculator {
     public static void main(String[] args) {
-        Register A = new Register(8);
+ /*       Register A = new Register(8);
         Register B = new Register(8);
         A.clockIt();
         A.setDatalines("00110010");
@@ -28,7 +28,19 @@ public class Calculator {
         System.out.printf("+%s (%3d)%n", C, C.toDecimalNumber());
         System.out.printf("---------------------------------%n");
         // adding the twos complement is how we subtract
-        System.out.printf("" + " %s (%3d)%n", R, R.toDecimalNumber());
+        System.out.printf("" + " %s (%3d)%n", R, R.toDecimalNumber());*/
+
+        boolean[] register = {true, true, false, true};
+
+        TwosComplementer complementer = new TwosComplementer();
+        register = complementer.addOne(register);
+        register = complementer.get
+
+        for (int i = 0; i < register.length; i++) {
+            System.out.println(register[i]);
+
+        }
+
     }
 }
 
