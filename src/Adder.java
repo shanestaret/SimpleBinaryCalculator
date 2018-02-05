@@ -3,6 +3,9 @@ public class Adder {
 	
 	public static Register add(Register a, Register b) {
 		Adder[] adders = new Adder[a.getRegisterValue().length];
+        for (int i = 0; i < adders.length; i++) {
+            adders[i] = new Adder();
+        }
 		adders[0].setInput1(a.getRegisterValue()[0]);
 		adders[0].setInput2(b.getRegisterValue()[0]);
 		for(int i = 1; i < a.getRegisterValue().length; i++){

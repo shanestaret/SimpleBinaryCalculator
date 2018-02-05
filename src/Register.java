@@ -16,9 +16,9 @@ public class Register {
 	public boolean[] getRegisterValue() {
 		return register;
 	}
-	
+
 	public void setRegisterValue(boolean[] value) {
-		for (int i = 1; i < 8; i++)
+		for (int i = 0; i < value.length; i++)
 			register[i] = value[i];
 	}
 
