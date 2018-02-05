@@ -7,8 +7,12 @@ public class TwosComplementer {
         //Get complement
         registerVal = getComplement(registerVal);
         //Add one
-
-        return new Register(0);
+        addOne(registerVal);
+        //Create new register and return
+        //@// TODO: 2/5/2018 update this to support N sized registers
+        Register tempRegister = new Register(8);
+        tempRegister.setRegisterValue(registerVal);
+        return tempRegister;
 
     }
 
