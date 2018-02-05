@@ -1,33 +1,14 @@
+
 public class Register {
-    //Use the code blocks to write your software
 
-
-    public Register(int size) {
-
-    }
-
-    public void clockIt() {
-
-    }
-
-    public void setDatalines(String val) {
-
-    }
-
-    public int toDecimalNumber() {
-
-
-        return 0;
-    }
-
-    //Used to access the register value
-    public boolean[] getRegisterValue() {
-        return new boolean[0];
-    }
-
-    public void setRegisterValue(boolean[] value){
-
-    }
-
-
+	boolean[] Register = new boolean[8];	
+	
+	public boolean[] getRegisterValue() {
+		return Register;
+	}
+	
+	public void setRegisterValue(boolean[] value) {
+		for (int i = 1; i < 8; i++)
+			Register[i] = value[i];
+	}	
 }
