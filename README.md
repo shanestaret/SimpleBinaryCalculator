@@ -3,9 +3,9 @@ This is a simple Java based binary calculator based on software emulated gates. 
 
 The project is split into three portions:
 
-* The adder
-* The complementor
-* The registers
+* The Adder
+* The Complementor
+* The Registers
 
 Each of these systems will be developed in a separate branch and merged when each branch has completed their work.
 
