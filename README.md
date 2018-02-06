@@ -15,7 +15,7 @@ Each of these systems will be developed in a separate branch and merged when eac
 * True representing a 1 and false representing a 0 in bolean values. 
 * The left most column of the array, position 0 in Java will represent the most significant digit of our binary number.
 
-**Expectaions of classes**
+**Expectations of classes**
 
 * The **adder** will blindly add any two numbers and return the result in an array
 	* If the application is subtracting two numbers the adder will be passed a properly sighned value so that the resulltant is correct
