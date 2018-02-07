@@ -24,6 +24,6 @@ public class TwosComplementer {
             carry = andGate.getOutput();
         }
         
-        return register;
+        return register; //return the binary number that has been properly complimented
     }
 }
